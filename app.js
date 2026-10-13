@@ -1,4 +1,3 @@
-
 /* ===== EDIT THESE ===== */
 const WA="255779890008";               // client WhatsApp number, country code, no + or spaces
 const IG="https://www.instagram.com/magictouchretreats01/";   // Instagram profile
@@ -70,7 +69,7 @@ $$("[data-wa]").forEach(a=>a.onclick=e=>{e.preventDefault();track("chat",a.datas
 $("#ig").href=IG;$("#yr").textContent=new Date().getFullYear();
 $("#af").onsubmit=e=>{e.preventDefault();const f=e.target,v=n=>(f[n]?f[n].value:"").trim();const m=t("en")+v("course")+"\n"+t("ln")+": "+v("name")+"\nTel: "+v("phone")+(v("email")?"\nEmail: "+v("email"):"")+(v("start")?"\n"+t("ld")+": "+v("start"):"")+(v("message")?"\n"+t("lx")+": "+v("message"):"");const u=wa(m);window.open(u,"_blank");track("academy",v("course"));try{fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()}).catch(()=>{})}catch(x){}f.style.display="none";$("#ok").style.display="block";const w=$("#okw");w.href=u;w.style.display="inline-block"};
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-if(GA_ID){const s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+GA_ID;document.head.appendChild(s);gtag("js",new Date());gtag("config",GA_ID)}
+/* Google tag is loaded in each page <head>; app.js only sends the click events below */
 function track(a,l){try{gtag("event","whatsapp_click",{action:a,label:l})}catch(e){}}
 $("#send").addEventListener("click",()=>track("order",Object.keys(C).join(", ")));
 /* ===== BOOKING BASKET (many services, one booking) + ORDER LIST ===== */
